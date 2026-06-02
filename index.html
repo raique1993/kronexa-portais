@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kronexa — Inteligência que trabalha por você</title>
+<meta name="description" content="Kronexa é o ecossistema global de SaaS com IA para negócios brasileiros. Do atendimento à contabilidade, automatizado.">
+<meta property="og:title" content="Kronexa — Inteligência que trabalha por você">
+<meta property="og:description" content="Automatize sua empresa com IA. WhatsApp, vendas, estoque, marketing e mais.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,4 96,28 96,72 50,96 4,72 4,28' fill='%236C3FE8'/><line x1='35' y1='25' x2='35' y2='75' stroke='white' stroke-width='10' stroke-linecap='round'/><line x1='35' y1='50' x2='65' y2='25' stroke='white' stroke-width='10' stroke-linecap='round'/><line x1='35' y1='50' x2='65' y2='75' stroke='white' stroke-width='10' stroke-linecap='round'/></svg>">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --p:#6C3FE8;--pd:#5530c4;--c:#00E5FF;--o:#FF6B35;
+  --bg:#08081A;--bg2:#12122A;--bg3:#1a1a35;
+  --t1:#F0F0FF;--t2:#9090b0;--t3:#505070;
+  --r:14px
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--t1);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+
+/* HEADER */
+.hd{position:sticky;top:0;z-index:100;height:64px;background:rgba(8,8,26,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(108,63,232,.15);display:flex;align-items:center;padding:0 5%;justify-content:space-between}
+.hd-logo{display:flex;align-items:center;gap:12px}
+.hd-logo svg{width:36px;height:36px}
+.hd-name{font-size:20px;font-weight:900;letter-spacing:1px;color:var(--t1)}
+.hd-name span{color:var(--p)}
+.hd-nav{display:flex;gap:28px;align-items:center}
+.hd-nav a{font-size:13px;color:var(--t2);transition:color .2s}.hd-nav a:hover{color:var(--t1)}
+.hd-cta{padding:8px 20px;background:var(--p);color:#fff;border-radius:100px;font-size:13px;font-weight:700;transition:all .2s}
+.hd-cta:hover{background:var(--pd);transform:translateY(-1px)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 20px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%, rgba(108,63,232,.2) 0%, transparent 60%);pointer-events:none}
+.hero::after{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle, rgba(0,229,255,.05) 0%, transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+.hero-content{max-width:760px;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(108,63,232,.15);border:1px solid rgba(108,63,232,.3);border-radius:100px;font-size:12px;font-weight:700;color:var(--p);letter-spacing:1px;text-transform:uppercase;margin-bottom:24px}
+.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--c);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+.hero-title{font-size:clamp(40px,7vw,78px);font-weight:900;letter-spacing:-3px;line-height:1.0;margin-bottom:20px}
+.hero-title .k{color:var(--p)}
+.hero-title .c{color:var(--c)}
+.hero-sub{font-size:clamp(16px,2vw,20px);color:var(--t2);line-height:1.7;max-width:560px;margin:0 auto 36px}
+.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-p{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:var(--p);color:#fff;border-radius:12px;font-size:15px;font-weight:800;transition:all .25s;border:none;cursor:pointer}
+.btn-p:hover{background:var(--pd);transform:translateY(-2px);box-shadow:0 12px 32px rgba(108,63,232,.4)}
+.btn-o{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:transparent;color:var(--t1);border:1px solid rgba(255,255,255,.15);border-radius:12px;font-size:15px;font-weight:600;transition:all .25s}
+.btn-o:hover{border-color:var(--p);color:var(--p)}
+.hero-stats{display:flex;gap:40px;justify-content:center;margin-top:60px;padding-top:40px;border-top:1px solid rgba(255,255,255,.06)}
+.stat-n{font-size:32px;font-weight:900;color:var(--p);display:block}
+.stat-l{font-size:12px;color:var(--t3)}
+
+/* PRODUTOS */
+.produtos{padding:100px 5%;max-width:1100px;margin:0 auto}
+.sec-tag{font-size:11px;font-weight:700;color:var(--p);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+.sec-title{font-size:clamp(28px,4vw,44px);font-weight:900;letter-spacing:-1.5px;margin-bottom:12px}
+.sec-sub{font-size:16px;color:var(--t2);max-width:560px;line-height:1.6;margin-bottom:52px}
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.prod-card{background:var(--bg2);border:1px solid rgba(255,255,255,.07);border-radius:var(--r);padding:28px;transition:all .3s;position:relative;overflow:hidden}
+.prod-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--clr,var(--p));opacity:.6}
+.prod-card:hover{border-color:rgba(108,63,232,.25);transform:translateY(-4px)}
+.prod-card.active{border-color:var(--p)}
+.prod-icon{font-size:32px;margin-bottom:16px}
+.prod-name{font-size:19px;font-weight:800;margin-bottom:6px}
+.prod-desc{font-size:14px;color:var(--t2);line-height:1.6;margin-bottom:16px}
+.prod-status{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:4px 10px;border-radius:100px}
+.ps-live{background:rgba(0,229,255,.1);color:var(--c)}
+.ps-dev{background:rgba(108,63,232,.1);color:var(--p)}
+.ps-soon{background:rgba(255,255,255,.06);color:var(--t3)}
+.prod-feats{margin-top:16px;display:flex;flex-direction:column;gap:6px}
+.prod-feat{display:flex;gap:7px;font-size:12px;color:var(--t2)}
+.prod-feat .dot{color:var(--p);font-weight:700}
+
+/* IA FEATURES */
+.features{background:var(--bg2);padding:100px 5%}
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;max-width:1100px;margin:0 auto}
+.feat-card{background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--r);padding:20px}
+.feat-icon{width:40px;height:40px;background:rgba(108,63,232,.15);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:12px}
+.feat-title{font-size:14px;font-weight:700;margin-bottom:5px}
+.feat-desc{font-size:12px;color:var(--t2);line-height:1.5}
+
+/* MISSÃO */
+.missao{padding:100px 5%;max-width:900px;margin:0 auto;text-align:center}
+.missao-quote{font-size:clamp(20px,3vw,32px);font-weight:700;letter-spacing:-.5px;line-height:1.4;color:var(--t1);margin-bottom:20px}
+.missao-quote .h{color:var(--p)}
+.missao-by{font-size:14px;color:var(--t3)}
+
+/* FUNDADOR */
+.fundador{background:var(--bg2);padding:80px 5%}
+.fund-wrap{max-width:700px;margin:0 auto;display:flex;gap:32px;align-items:center}
+.fund-avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--p),var(--c));flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:900;color:#fff}
+.fund-name{font-size:18px;font-weight:800;margin-bottom:4px}
+.fund-role{font-size:13px;color:var(--p);font-weight:600;margin-bottom:10px}
+.fund-text{font-size:14px;color:var(--t2);line-height:1.7}
+
+/* CTA FINAL */
+.cta-final{padding:120px 5%;text-align:center;position:relative}
+.cta-final::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center, rgba(108,63,232,.12) 0%, transparent 60%);pointer-events:none}
+.cta-title{font-size:clamp(32px,5vw,56px);font-weight:900;letter-spacing:-2px;margin-bottom:14px}
+.cta-sub{font-size:18px;color:var(--t2);margin-bottom:36px}
+
+/* FOOTER */
+footer{padding:32px 5%;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.ft-logo{font-size:15px;font-weight:800;letter-spacing:1px}
+.ft-logo span{color:var(--p)}
+.ft-links{display:flex;gap:20px}
+.ft-links a{font-size:12px;color:var(--t3);transition:color .2s}.ft-links a:hover{color:var(--t1)}
+.ft-copy{font-size:11px;color:var(--t3)}
+
+@media(max-width:640px){
+  .hd-nav{display:none}
+  .hero-stats{gap:20px}
+  .fund-wrap{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hd">
+  <div class="hd-logo">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="50,4 96,28 96,72 50,96 4,72 4,28" fill="#6C3FE8"/>
+      <polygon points="50,20 80,36 80,64 50,80 20,64 20,36" fill="none" stroke="#00E5FF" stroke-width="3"/>
+      <line x1="36" y1="30" x2="36" y2="70" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="36" y1="50" x2="64" y2="30" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <line x1="36" y1="50" x2="64" y2="70" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <circle cx="50" cy="50" r="5" fill="#00E5FF"/>
+    </svg>
+    <div class="hd-name">KRO<span>NEXA</span></div>
+  </div>
+  <nav class="hd-nav">
+    <a href="#produtos">Produtos</a>
+    <a href="#ia">Tecnologia</a>
+    <a href="#missao">Missão</a>
+    <a href="#fundador">Fundador</a>
+  </nav>
+  <a href="#produtos" class="hd-cta">Conhecer →</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span>Ecossistema global de IA</span>
+    </div>
+    <h1 class="hero-title">
+      <span class="k">Kronexa.</span><br>
+      <span class="c">Inteligência</span> que<br>
+      trabalha por você.
+    </h1>
+    <p class="hero-sub">Do atendimento ao financeiro, do estoque ao marketing — a IA da Kronexa substitui processos manuais e transforma negócios brasileiros.</p>
+    <div class="hero-actions">
+      <a href="#produtos" class="btn-p">Ver os produtos →</a>
+      <a href="https://wa.me/5561991775904?text=Quero+conhecer+a+Kronexa" target="_blank" class="btn-o">Falar com fundador</a>
+    </div>
+    <div class="hero-stats">
+      <div><span class="stat-n">IA</span><span class="stat-l">Gemini 2.0 + Claude</span></div>
+      <div><span class="stat-n">24/7</span><span class="stat-l">Operação automática</span></div>
+      <div><span class="stat-n">5+</span><span class="stat-l">Verticais de negócio</span></div>
+      <div><span class="stat-n">∞</span><span class="stat-l">Escalabilidade</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUTOS -->
+<section class="produtos" id="produtos">
+  <div class="sec-tag">Ecossistema</div>
+  <h2 class="sec-title">Produtos Kronexa</h2>
+  <p class="sec-sub">Uma plataforma de IA adaptada para cada nicho. A mesma inteligência, personalizada para o seu negócio.</p>
+  <div class="prod-grid">
+
+    <div class="prod-card active" style="--clr:#00E5FF">
+      <div class="prod-icon">🔧</div>
+      <div class="prod-name">Kronexa Auto</div>
+      <div class="prod-desc">Gestão completa para oficinas mecânicas. Check-in por WhatsApp, diagnóstico com IA, cotação automática de peças, portal do cliente.</div>
+      <span class="prod-status ps-live">● Ao vivo</span>
+      <div class="prod-feats">
+        <div class="prod-feat"><span class="dot">✓</span>Automação completa via WhatsApp</div>
+        <div class="prod-feat"><span class="dot">✓</span>IA de diagnóstico técnico</div>
+        <div class="prod-feat"><span class="dot">✓</span>Portal cliente em tempo real</div>
+      </div>
+    </div>
+
+    <div class="prod-card" style="--clr:#6C3FE8">
+      <div class="prod-icon">🛍️</div>
+      <div class="prod-name">Kronexa Store</div>
+      <div class="prod-desc">Varejo inteligente para perfumarias, bijuterias, óticas e moda. IA faz vendas 24h, gerencia estoque e substitui funcionários.</div>
+      <span class="prod-status ps-dev">⚡ Em desenvolvimento</span>
+      <div class="prod-feats">
+        <div class="prod-feat"><span class="dot">✓</span>Vendas automáticas pelo WhatsApp</div>
+        <div class="prod-feat"><span class="dot">✓</span>Estoque com alertas inteligentes</div>
+        <div class="prod-feat"><span class="dot">✓</span>Marketing e redes sociais com IA</div>
+      </div>
+    </div>
+
+    <div class="prod-card" style="--clr:#FF6B35">
+      <div class="prod-icon">🍽️</div>
+      <div class="prod-name">Kronexa Food</div>
+      <div class="prod-desc">Gestão para restaurantes, lanchonetes e delivery. Cardápio digital, pedidos automáticos, controle de cozinha e CMV.</div>
+      <span class="prod-status ps-soon">Em breve</span>
+      <div class="prod-feats">
+        <div class="prod-feat" style="color:var(--t3)"><span class="dot" style="color:var(--t3)">·</span>Cardápio via WhatsApp</div>
+        <div class="prod-feat" style="color:var(--t3)"><span class="dot" style="color:var(--t3)">·</span>Controle de cozinha</div>
+        <div class="prod-feat" style="color:var(--t3)"><span class="dot" style="color:var(--t3)">·</span>Relatórios de CMV</div>
+      </div>
+    </div>
+
+    <div class="prod-card" style="--clr:#9090b0">
+      <div class="prod-icon">🏥</div>
+      <div class="prod-name">Kronexa Health</div>
+      <div class="prod-desc">Para clínicas, consultórios e laboratórios. Agendamentos, prontuário digital, cobrança automática e follow-up de pacientes.</div>
+      <span class="prod-status ps-soon">Em breve</span>
+      <div class="prod-feats">
+        <div class="prod-feat" style="color:var(--t3)"><span class="dot" style="color:var(--t3)">·</span>Agendamento inteligente</div>
+        <div class="prod-feat" style="color:var(--t3)"><span class="dot" style="color:var(--t3)">·</span>Prontuário digital</div>
+        <div class="prod-feat" style="color:var(--t3)"><span class="dot" style="color:var(--t3)">·</span>Cobrança automática</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TECNOLOGIA IA -->
+<section class="features" id="ia">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="sec-tag" style="text-align:center">Tecnologia</div>
+    <h2 class="sec-title" style="text-align:center;max-width:100%;margin-bottom:12px">O motor que impulsiona tudo</h2>
+    <p class="sec-sub" style="text-align:center;margin:0 auto 48px">Cada produto Kronexa é alimentado pelo mesmo núcleo de IA — rápido, confiável e em constante evolução.</p>
+    <div class="feat-grid">
+      <div class="feat-card">
+        <div class="feat-icon">🤖</div>
+        <div class="feat-title">IA Conversacional</div>
+        <div class="feat-desc">Gemini 2.0 Flash + Claude. Entende contexto, aprende com o negócio e responde como um humano.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">📱</div>
+        <div class="feat-title">WhatsApp Nativo</div>
+        <div class="feat-desc">Evolution API. A IA opera direto no WhatsApp do negócio — o canal que todo brasileiro já usa.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">⚡</div>
+        <div class="feat-title">Automação Total</div>
+        <div class="feat-desc">Supabase Edge Functions. Processos automáticos que rodam 24/7 sem intervenção humana.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">📊</div>
+        <div class="feat-title">Dashboard em Tempo Real</div>
+        <div class="feat-desc">Next.js + Supabase. Visão completa do negócio em qualquer dispositivo, sempre atualizado.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🔗</div>
+        <div class="feat-title">Integrações Abertas</div>
+        <div class="feat-desc">API REST documentada. Conecta com qualquer sistema existente sem trocar o que já funciona.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🔒</div>
+        <div class="feat-title">Segurança LGPD</div>
+        <div class="feat-desc">Row Level Security no banco. Cada cliente tem dados isolados e protegidos por lei.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSÃO -->
+<section class="missao" id="missao">
+  <div class="sec-tag" style="display:block;margin-bottom:20px">Missão</div>
+  <blockquote class="missao-quote">
+    "Acreditamos que toda empresa brasileira merece ter <span class="h">inteligência artificial</span> trabalhando por ela — independente do tamanho ou do orçamento."
+  </blockquote>
+  <p class="missao-by">— Kronexa, 2025</p>
+</section>
+
+<!-- FUNDADOR -->
+<section class="fundador" id="fundador">
+  <div class="fund-wrap">
+    <div class="fund-avatar">RD</div>
+    <div>
+      <div class="fund-name">Raíque Dornelas Almeida</div>
+      <div class="fund-role">Fundador & CEO · Kronexa</div>
+      <div class="fund-text">Construindo o futuro da gestão inteligente para negócios brasileiros. A Kronexa nasce da visão de que tecnologia de ponta deve ser acessível a todos — da oficina ao varejo, da clínica ao restaurante.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div style="position:relative;z-index:1">
+    <h2 class="cta-title">A revolução<br><span style="color:var(--p)">começa aqui.</span></h2>
+    <p class="cta-sub">Junte-se ao ecossistema Kronexa e transforme seu negócio.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a href="https://mecaniia.com.br" class="btn-p">Ver Kronexa Auto →</a>
+      <a href="https://wa.me/5561991775904?text=Quero+conhecer+a+Kronexa" target="_blank" class="btn-o">Falar com o fundador</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-logo">KRO<span>NEXA</span></div>
+  <div class="ft-links">
+    <a href="https://mecaniia.com.br">Kronexa Auto</a>
+    <a href="#produtos">Produtos</a>
+    <a href="https://wa.me/5561991775904">Contato</a>
+  </div>
+  <div class="ft-copy">© 2025 Kronexa · Todos os direitos reservados</div>
+</footer>
+
+</body>
+</html>
