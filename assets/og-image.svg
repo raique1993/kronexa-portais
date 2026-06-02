@@ -1,0 +1,17 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#08081A"/>
+  <rect x="0" y="0" width="1200" height="4" fill="#6C3FE8"/>
+  <g transform="translate(200,315)">
+    <polygon points="0,-90 78,-45 78,45 0,90 -78,45 -78,-45" fill="#6C3FE8"/>
+    <polygon points="0,-63 54,-31 54,31 0,63 -54,31 -54,-31" fill="none" stroke="#00E5FF" stroke-width="3.5"/>
+    <line x1="-20" y1="-38" x2="-20" y2="38" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+    <line x1="-20" y1="0" x2="26" y2="-38" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+    <line x1="-20" y1="0" x2="26" y2="38" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="0" cy="0" r="8" fill="#00E5FF"/>
+  </g>
+  <text x="340" y="275" font-family="Arial,sans-serif" font-weight="900" font-size="88" letter-spacing="8" fill="#F0F0FF">KRONEXA</text>
+  <line x1="340" y1="300" x2="1000" y2="300" stroke="#6C3FE8" stroke-width="2"/>
+  <text x="340" y="345" font-family="Arial,sans-serif" font-weight="300" font-size="24" letter-spacing="4" fill="#9090b0">INTELIGÊNCIA QUE TRABALHA POR VOCÊ</text>
+  <text x="340" y="410" font-family="Arial,sans-serif" font-size="18" fill="#6C3FE8" letter-spacing="2">ECOSSISTEMA GLOBAL DE IA · BRASIL</text>
+  <text x="1150" y="610" text-anchor="end" font-family="Arial,sans-serif" font-size="14" fill="#303050">kronexa.com.br</text>
+</svg>
